@@ -1,0 +1,14 @@
+{
+    "name": "wamp.io"
+  , "description": "Implementation of the WebSocket Application Messaging Protocol (WAMP) for WebSocket.IO or Engine.IO"
+  , "version": "0.0.1"
+  , "contributors": [
+        { "name": "Nico Kaiser", "email": "nico@kaiser.me" }
+    ]
+  , "dependencies": {}
+  , "devDependencies": {
+        "websocket.io": "0.1.*"
+    }
+  , "main": "lib/wamp.io"
+  , "engines": { "node": ">=0.4.0" }
+}
