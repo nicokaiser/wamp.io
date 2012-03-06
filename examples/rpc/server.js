@@ -19,7 +19,7 @@ var ws = wsio.listen(3000);
 var procs = {
 
   // Simple even/odd number test
-  '[test:isEven]': function(args, cb) {
+  'test:isEven': function(args, cb) {
     cb(null, args[0] % 2 == 0);
   }
 
