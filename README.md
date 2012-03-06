@@ -1,7 +1,7 @@
 
-# WAMP.IO: an implementation of the Autobahn WebSockets RPC/PubSub
+# WAMP.IO: Autobahn WebSockets RPC/PubSub for WebSocket.IO
 
-This is an implementation of the [WebSocket Application Messaging Protocol (WAMP)](http://www.tavendo.de/autobahn/protocol.html) proposed by Travendo.
+This is an implentation of the [WebSocket Application Messaging Protocol (WAMP)](http://www.tavendo.de/autobahn/protocol.html) proposed by Travendo.
 
 It attaches either to [WebSocket.IO](http://github.com/learnboost/websocket.io) or [Engine.IO](http://github.com/learnboost/engine.io) and provides mechanisms for
 
