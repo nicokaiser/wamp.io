@@ -5,7 +5,9 @@
   , "contributors": [
         { "name": "Nico Kaiser", "email": "nico@kaiser.me" }
     ]
-  , "dependencies": {}
+  , "dependencies": {
+        "debug": "*"
+    }
   , "devDependencies": {
         "websocket.io": "0.1.*"
     }
