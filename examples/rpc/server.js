@@ -10,7 +10,7 @@ var wsio = require('websocket.io')
  * WebSocket server
  */
 
-var ws = wsio.listen(3000);
+var ws = wsio.listen(9000);
 
 /**
  * Procedures
