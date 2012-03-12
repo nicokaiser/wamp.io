@@ -20,9 +20,14 @@ var app = wamp.attach(ws);
  */
 
 var api = http.createServer(function(req, res) {
-  if (req.url !== '/hub' ||  req.method !== 'POST') {
-    res.writeHead(400);
-    res.end();
+  if (req.url !== '/hub') {
+    res.writeHead(404);
+    res.end('Not Found');
+    return;
+  }
+  if (req.method !== 'POST') {
+    res.writeHead(405);
+    res.end('Method Not Allowed');
     return;
   }
 
@@ -33,20 +38,18 @@ var api = http.createServer(function(req, res) {
   });
 
   req.on('end', function() {
+    var topicUri, event;
     try {
       var parsed = qs.parse(buffer);
-    
-      var topicUri = parsed.topicuri;
-      var event = JSON.parse(parsed.body);
-
-      console.log('pushing ' + event + ' to ' + topicUri);
-      app.publish(topicUri, event);
+      topicUri = parsed.topicuri;
+      event = JSON.parse(parsed.body);
     } catch (e) {
       res.writeHead(400);
-      res.end();
+      res.end('invalid JSON in request body');
       return;
     }
-    res.writeHead(200);
+    app.publish(topicUri, event);
+    res.writeHead(202);
     res.end();
   });
 
