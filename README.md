@@ -12,6 +12,8 @@ It attaches either to [WebSocket.IO](http://github.com/learnboost/websocket.io) 
 
 ### Simple PubSub server
 
+By default, wamp.io provides a simple PubSub server that enables client to subscribe to any topic and to send events to any topic.
+
 #### Attach WAMP to a WebSocket.IO server
 
 ```js
