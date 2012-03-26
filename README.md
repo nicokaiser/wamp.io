@@ -10,8 +10,45 @@ It attaches either to [WebSocket.IO](http://github.com/learnboost/websocket.io) 
 
 ## Usage
 
-...
+### Simple PubSub server
 
+#### Attach WAMP to a WebSocket.IO server
+
+```js
+var wsio = require('websocket.io')
+  , wamp = require('wamp.io');
+
+var ws = wsio.listen(9000);
+var app = wamp.attach(ws);
+```
+
+#### Attach WAMP to an Engine.IO server
+
+```js
+var eio = require('engine.io')
+  , wamp = require('wamp.io');
+
+var engine = eio.listen(9000);
+var app = wamp.attach(engine);
+```
+
+### Simple RPC server
+
+The server emits the `call` event when an RPC function is called. Results can be returned using the callback parameter.
+
+```js
+var wsio = require('websocket.io')
+  , wamp = require('wamp.io');
+
+var ws = wsio.listen(9000);
+var app = wamp.attach(ws);
+
+app.on('call', function(procUri, args, cb) {
+  if (procUri === 'isEven') {
+    cb(null, args[0] % 2 == 0);
+  }
+});
+```
 
 ## License 
 
