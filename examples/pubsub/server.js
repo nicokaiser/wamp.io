@@ -5,15 +5,15 @@
 
 var http = require('http')
   , qs = require('querystring')
-  , wsio = require('websocket.io')
+  , WebSocketServer = require('ws').Server
   , wamp = require('../../lib/wamp.io');
 
 /**
  * WebSocket server
  */
 
-var ws = wsio.listen(9000);
-var app = wamp.attach(ws);
+var wss = new WebSocketServer({ port: 9000 });
+var app = wamp.attach(wss);
 
 /**
  * REST API

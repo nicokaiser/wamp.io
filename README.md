@@ -3,7 +3,7 @@
 
 This is an implentation of the [WebSocket Application Messaging Protocol (WAMP)](http://www.tavendo.de/autobahn/protocol.html) proposed by Travendo.
 
-It attaches either to [WebSocket.IO](http://github.com/learnboost/websocket.io) or [Engine.IO](http://github.com/learnboost/engine.io) and provides mechanisms for
+It attaches to a [WebSocket server](https://github.com/einaros/ws/) and provides mechanisms for
 
 - **Request and Response** and
 - **Publish and Subscribe**
@@ -56,7 +56,7 @@ app.on('call', function(procUri, args, cb) {
 
 (The MIT License)
 
-Copyright (c) 2012 Nico Kaiser &lt;nico@kaiser.me&gt;
+Copyright (c) 2013 Nico Kaiser &lt;nico@kaiser.me&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

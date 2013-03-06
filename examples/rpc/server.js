@@ -3,14 +3,14 @@
  * Module dependencies.
  */
 
-var wsio = require('websocket.io')
+var WebSocketServer = require('ws').Server
   , wamp = require('../../lib/wamp.io');
 
 /**
  * WebSocket server
  */
 
-var ws = wsio.listen(9000);
+var wss = new WebSocketServer({ port: 9000 });
 
 /**
  * Procedures
@@ -29,7 +29,7 @@ var procs = {
  * Attach wamp
  */
 
-var app = wamp.attach(ws);
+var app = wamp.attach(wss);
 
 app.on('call', function(procUri, args, cb) {
   if (! procs[procUri]) {
