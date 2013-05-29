@@ -6,10 +6,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/lamuertepeluda/wamp.io.git"
+        "url": "https://github.com/nicokaiser/wamp.io.git"
     },
     "description": "Implementation of the WebSocket Application Messaging Protocol (WAMP) for WebSocket.IO or Engine.IO",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "contributors": [
         {
             "name": "Nico Kaiser",
@@ -22,9 +22,12 @@
     ],
     "dependencies": {
         "debug": "*"
+      , "when": "*"
+      , "debug": "*"
     },
     "devDependencies": {
         "ws": "~0.4.25"
+      , "mocha": "*"
     },
     "main": "lib/wamp.io",
     "engines": {
