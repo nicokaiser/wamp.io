@@ -24,6 +24,7 @@
         "debug": "*"
       , "when": "*"
       , "debug": "*"
+      , "crypto-js": "*"
     },
     "devDependencies": {
         "ws": "~0.4.25"
