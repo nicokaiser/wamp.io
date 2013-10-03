@@ -23,7 +23,6 @@
     "dependencies": {
         "debug": "*"
       , "when": "*"
-      , "debug": "*"
     },
     "devDependencies": {
         "ws": "~0.4.25"

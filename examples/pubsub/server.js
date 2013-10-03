@@ -1,24 +1,24 @@
-
-/**
- * Module dependencies.
- */
+//
+// Simple PubSub server (hub) example
+//
 
 var http = require('http')
   , qs = require('querystring')
   , WebSocketServer = require('ws').Server
   , wamp = require('../../lib/wamp.io');
 
-/**
- * WebSocket server
- */
-
+//
+// WebSocket server on port 9000
+//
 var wss = new WebSocketServer({ port: 9000 });
 var app = wamp.attach(wss);
 
-/**
- * REST API
- */
-
+//
+// REST API on port 9090
+//
+// Provides a small REST API that lets you send (publish) data
+// via HTTP POST to "/hub".
+//
 var api = http.createServer(function(req, res) {
   if (req.url !== '/hub') {
     res.writeHead(404);
