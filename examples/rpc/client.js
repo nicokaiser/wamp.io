@@ -1,5 +1,5 @@
 var when = require('when')
-  , wamp = require('wamp.io');
+  , wamp = require('../../lib/wamp.io');
 
 //
 // Turn debugging on
