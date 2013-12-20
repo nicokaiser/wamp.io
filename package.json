@@ -6,9 +6,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/nicokaiser/wamp.io.git"
+        "url": "https://github.com/mathieumg/wamp.io"
     },
-    "description": "Implementation of the WebSocket Application Messaging Protocol (WAMP) for WebSocket.IO or Engine.IO",
+    "description": "Implementation of the WebSocket Application Messaging Protocol (WAMP) for WebSocket.IO, Engine.IO or SockJS",
     "version": "0.0.4",
     "contributors": [
         {
@@ -18,15 +18,19 @@
         {
             "name": "Vito Macchia",
             "email": "vito.macchia@gmail.com"
+        },
+        {
+            "name": "Mathieu M-Gosselin",
+            "email": "mathieumg@gmail.com"
         }
     ],
     "dependencies": {
-        "debug": "*"
-      , "when": "*"
+        "debug": "*",
+        "when": "*",
+        "ws": "~0.4.25"
     },
     "devDependencies": {
-        "ws": "~0.4.25"
-      , "mocha": "*"
+        "mocha": "*"
     },
     "main": "lib/wamp.io",
     "engines": {
