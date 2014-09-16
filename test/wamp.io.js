@@ -44,20 +44,5 @@ describe('wamp', function(){
 
             var client = wamp.connect("ws://localhost:9001");
         });
-
-        it('should after connect send a welcome message', function(done){
-
-            wss.on('connection', function(wsClient){
-                sinon.spy(wsClient, "send");
-            });
-
-            var conn = wamp.attach(wss);
-
-            var client = wamp.connect("ws://localhost:9001");
-
-            wss.getCall(0).args[0].should.equal([]);
-
-        });
-
     });
 });
