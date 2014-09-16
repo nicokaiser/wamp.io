@@ -22,11 +22,11 @@
     ],
     "dependencies": {
         "debug": "*"
-      , "when": "*"
+      , "when": "*",
+        "ws": "~0.4.25"
     },
     "devDependencies": {
-        "ws": "~0.4.25"
-      , "mocha": "*"
+      "mocha": "*"
     },
     "main": "lib/wamp.io",
     "engines": {
