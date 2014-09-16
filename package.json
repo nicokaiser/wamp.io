@@ -1,35 +1,37 @@
 {
-    "name": "wamp.io",
-    "author": {
-        "name": "Paul Daniels",
-        "email": "paulpdaniels@gmail.com"
+  "name": "wamp.io",
+  "author": {
+    "name": "Paul Daniels",
+    "email": "paulpdaniels@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulpdaniels/wamp.io.git"
+  },
+  "description": "Implementation of the WebSocket Application Messaging Protocol (WAMP) for WebSocket.IO or Engine.IO",
+  "version": "0.0.4",
+  "contributors": [
+    {
+      "name": "Nico Kaiser",
+      "email": "nico@kaiser.me"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/paulpdaniels/wamp.io.git"
-    },
-    "description": "Implementation of the WebSocket Application Messaging Protocol (WAMP) for WebSocket.IO or Engine.IO",
-    "version": "0.0.4",
-    "contributors": [
-        {
-            "name": "Nico Kaiser",
-            "email": "nico@kaiser.me"
-        },
-        {
-            "name": "Vito Macchia",
-            "email": "vito.macchia@gmail.com"
-        }
-    ],
-    "dependencies": {
-        "debug": "*",
-        "when": "*",
-        "ws": "~0.4.25"
-    },
-    "devDependencies": {
-        "mocha": "*"
-    },
-    "main": "lib/wamp.io",
-    "engines": {
-        "node": ">=0.6.0"
+    {
+      "name": "Vito Macchia",
+      "email": "vito.macchia@gmail.com"
     }
+  ],
+  "dependencies": {
+    "debug": "*",
+    "when": "*",
+    "ws": "~0.4.25"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "^4.0.4",
+    "sinon": "^1.10.3"
+  },
+  "main": "lib/wamp.io",
+  "engines": {
+    "node": ">=0.6.0"
+  }
 }
