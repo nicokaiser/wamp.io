@@ -87,6 +87,38 @@ var app = wamp.connect('ws://localhost:9000',
   );  
 ```
 
+### Simple PubSub client
+
+Clients publish and subscribe to topics
+
+```js
+var when = require('when')
+  , wamp = require('wamp.io');
+  
+var app = wamp.connect('ws://localhost:9000',
+    // WAMP session was established
+    function (session) 
+    {
+      console.log('new wamp session');
+      
+      session.subscribe('com.topic.client/stuff#action', function(topic, data) {
+      
+      });
+      
+      session.publish('com.topic2.client/other_stuff#action', {data : true}, false);
+      
+    },
+
+    // WAMP session is gone
+    function (session) 
+    {
+      console.log('wamp session is gone');
+    }
+  ); 
+
+
+```
+
 
 ## License 
 
