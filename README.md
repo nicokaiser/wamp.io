@@ -103,6 +103,7 @@ var app = wamp.connect('ws://localhost:9000',
       
       session.subscribe('com.topic.client/stuff#action', function(topic, data) {
       
+          //...handle subscription
       });
       
       session.publish('com.topic2.client/other_stuff#action', {data : true}, false);
