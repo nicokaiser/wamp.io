@@ -26,6 +26,8 @@
     "ws": "~0.4.25"
   },
   "devDependencies": {
+    "chai": "^1.9.2",
+    "chai-as-promised": "^4.1.1",
     "mocha": "*",
     "should": "^4.0.4",
     "sinon": "^1.10.3"
