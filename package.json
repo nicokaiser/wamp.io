@@ -9,7 +9,7 @@
     "url": "https://github.com/paulpdaniels/wamp.io.git"
   },
   "description": "[Mirror] - Implementation of the WebSocket Application Messaging Protocol (WAMP) for WebSocket.IO or Engine.IO",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "contributors": [
   ],
   "dependencies": {
@@ -18,6 +18,8 @@
     "ws": "~0.4.25"
   },
   "devDependencies": {
+    "chai": "^1.9.2",
+    "chai-as-promised": "^4.1.1",
     "mocha": "*",
     "should": "^4.0.4",
     "sinon": "^1.10.3"

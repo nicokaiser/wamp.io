@@ -16,7 +16,7 @@ var app = wamp.connect('ws://localhost:9000',
     console.log('new wamp session');
       
     session.call("test:isEven", 2)
-      .promise.then(
+        .then(
           // RPC success callback
           function (reply) {
             console.log("result: " + reply);
