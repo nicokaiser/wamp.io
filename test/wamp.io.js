@@ -52,8 +52,6 @@ describe('wamp', function(){
         before(function(){
             wss = new WebSocketServer({port : 9001});
 
-
-
             var server = wamp.attach(wss);
 
             server.on('call', function(uri, args, cb){
@@ -65,8 +63,6 @@ describe('wamp', function(){
         });
 
         it('should resolve functions that are completed', function(done) {
-
-
             var client = wamp.connect("ws://localhost:9001", function(){
                 client.call('http://test.com/test#pass', false).should.eventually.equal(true).notify(done);
             });
@@ -77,6 +73,5 @@ describe('wamp', function(){
                 client.call('http://test.com/test#fail', false).should.eventually.be.rejected.notify(done);
             });
         })
-
     });
 });
