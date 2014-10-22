@@ -1,5 +1,10 @@
 
-# WAMP.IO: Autobahn WebSockets RPC/PubSub
+# [Mirror] WAMP.IO: Autobahn WebSockets RPC/PubSub
+
+This repository is a mirror of the original [wamp.io](https://github.com/nicokaiser/wamp.io),
+**now with more features!**
+* Pub/Sub support
+* Bug fixes!
 
 This is an implentation of the [WebSocket Application Messaging Protocol (WAMP)](http://www.tavendo.de/autobahn/protocol.html) proposed by Travendo.
 
