@@ -72,6 +72,65 @@ describe('wamp', function(){
             var client = wamp.connect("ws://localhost:9001", function(){
                 client.call('http://test.com/test#fail', false).should.eventually.be.rejected.notify(done);
             });
+        });
+    });
+
+    describe('#subscribe', function(){
+
+        var wss;
+
+        before(function(){
+
+            wss = new WebSocketServer({port : 9002});
+
+            var server= wamp.attach(wss);
+
+            server.on('subscribe', function(){
+
+            });
+
+            var helperClient = wamp.connect('ws://localhost:9002', function(){
+
+                helperClient.subscribe('http://test.com/publish#1', function(){});
+                helperClient.subscribe('http://test.com/publish#2', function(){});
+                helperClient.subscribe('http://test.com/publish#3', function(){});
+                helperClient.subscribe('http://test.com/publish#4', function(){});
+
+            });
+
+        });
+
+        it('should successfully publish to the server', function(){
+
+            var client = wamp.connect('ws://locahost:9002', function(){
+
+                client.publish('http://test.com/publish#1', true);
+
+                client.publish('http://test.com/publish#2', true, true);
+
+                client.publish('http://test.com/publish#3', true, []);
+
+                client.publish('http://test.com/publish#4', true, [], []);
+
+            });
+
+        });
+
+        it('should successfully subscribe to the server', function(){
+
+            var client = wamp.connect('ws://localhost:9002', function(){
+
+                client.subscribe('http://test.com/subscribe#1', function(){
+
+                });
+
+            });
+
+        });
+
+        it ('should sucessfully unsubscribe from the server', function(){
+
         })
+
     });
 });
