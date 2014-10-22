@@ -1,5 +1,10 @@
 
-# WAMP.IO: Autobahn WebSockets RPC/PubSub
+# [Mirror] WAMP.IO: Autobahn WebSockets RPC/PubSub
+
+This repository is a mirror of the original [wamp.io](https://github.com/nicokaiser/wamp.io),
+**now with more features!**
+* Pub/Sub support
+* Bug fixes!
 
 This is an implentation of the [WebSocket Application Messaging Protocol (WAMP)](http://www.tavendo.de/autobahn/protocol.html) proposed by Travendo.
 
@@ -64,7 +69,7 @@ var app = wamp.connect('ws://localhost:9000',
       console.log('new wamp session');
       
       session.call("test:isEven", 2)      
-        .promise.then(
+        .then(
             // RPC success callback
             function (reply)
             {
@@ -87,12 +92,45 @@ var app = wamp.connect('ws://localhost:9000',
   );  
 ```
 
+### Simple PubSub client
+
+Clients publish and subscribe to topics
+
+```js
+var when = require('when')
+  , wamp = require('wamp.io');
+  
+var app = wamp.connect('ws://localhost:9000',
+    // WAMP session was established
+    function (session) 
+    {
+      console.log('new wamp session');
+      
+      session.subscribe('com.topic.client/stuff#action', function(topic, data) {
+      
+          //...handle subscription
+      });
+      
+      session.publish('com.topic2.client/other_stuff#action', {data : true}, false);
+      
+    },
+
+    // WAMP session is gone
+    function (session) 
+    {
+      console.log('wamp session is gone');
+    }
+  ); 
+
+
+```
+
 
 ## License 
 
 (The MIT License)
 
-Copyright (c) 2013 Nico Kaiser &lt;nico@kaiser.me&gt;
+Copyright (c) 2014 Paul Daniels &lt;paulpdaniels@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
